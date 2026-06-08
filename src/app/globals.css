@@ -1,0 +1,190 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* =========================
+   🎨 DESIGN TOKENS (BASE)
+========================= */
+
+:root {
+  --cream: #f2ede4;
+  --offwhite: #fbf7f0;
+
+  --ink: #1c1710;
+  --ink-soft: #2e2618;
+
+  --amber: #c4853a;
+  --amber-light: #e8b06a;
+  --amber-dim: #7a4e18;
+
+  --stone: #8a7a6a;
+  --sand: #c8bfaf;
+  --sand-light: #e0d8cc;
+
+  --error: #b84040;
+  --success: #4a7a50;
+
+  /* semantic */
+  --bg: var(--cream);
+  --surface: var(--offwhite);
+  --raised: #ffffff;
+
+  --text: var(--ink);
+  --text-muted: var(--stone);
+  --text-soft: var(--sand);
+
+  --border: var(--sand-light);
+  --border-strong: var(--sand);
+
+  /* radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --radius-full: 999px;
+
+  /* shadows */
+  --shadow-sm: 0 1px 3px rgba(28, 23, 16, 0.06);
+  --shadow-md: 0 4px 16px rgba(28, 23, 16, 0.08);
+  --shadow-lg: 0 12px 40px rgba(28, 23, 16, 0.12);
+}
+
+/* =========================
+   ⚙️ TAILWIND V4 TOKENS
+========================= */
+
+@theme {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-soft: var(--text-soft);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-brand: var(--amber);
+  --color-brand-light: var(--amber-light);
+  --color-brand-dim: var(--amber-dim);
+
+  --color-cream: var(--cream);
+  --color-offwhite: var(--offwhite);
+
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+
+  --color-stone: var(--stone);
+  --color-sand: var(--sand);
+  --color-sand-light: var(--sand-light);
+
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+}
+
+/* =========================
+   🌀 BASE & TYPOGRAPHY
+========================= */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-text font-body;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    @apply font-display italic font-black;
+    font-size: clamp(40px, 8vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    @apply font-display italic font-bold;
+    font-size: clamp(28px, 6vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    @apply font-display italic font-normal;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* =========================
+   🎭 CUSTOM ANIMATIONS
+========================= */
+
+@keyframes sway-left {
+  0% { transform: rotate(-2deg); }
+  50% { transform: rotate(1.5deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+@keyframes sway-right {
+  0% { transform: rotate(2deg); }
+  50% { transform: rotate(-1.5deg); }
+  100% { transform: rotate(2deg); }
+}
+
+.animate-sway-left {
+  animation: sway-left 6s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.animate-sway-right {
+  animation: sway-right 7s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Sepia photo grain filter & hover reveals */
+.polaroid-img {
+  filter: sepia(0.65) contrast(1.1) brightness(0.95);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.polaroid-card:hover .polaroid-img {
+  filter: sepia(0) contrast(1) brightness(1);
+}

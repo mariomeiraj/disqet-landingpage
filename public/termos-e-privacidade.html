@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos de Uso & Política de Privacidade — Disqet</title>
+  
+  <!-- Google Fonts Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400;1,9..40,500&family=Fraunces:ital,opsz,wght@0,9..144,900;1,9..144,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       🎨 DESIGN SYSTEM CUSTOM PROPERTIES
+       ========================================================================== */
+    :root {
+      --ink: #1C1710;
+      --ink-light: #2a221a;
+      --cream: #F2EDE4;
+      --cream-muted: rgba(242, 237, 228, 0.5);
+      --cream-dim: rgba(242, 237, 228, 0.25);
+      --amber: #C4853A;
+      --amber-dim: rgba(196, 133, 58, 0.15);
+      
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    /* ==========================================================================
+       🧹 BASE STYLES & RESET
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--ink);
+      color: var(--cream);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--ink);
+      color: var(--cream);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    /* Custom scrollbar to match aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--ink);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--ink-light);
+      border: 1px solid var(--cream-dim);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--amber);
+    }
+
+    /* ==========================================================================
+       🧩 LAYOUT & COMPONENTS
+       ========================================================================== */
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--ink);
+      border-bottom: 1px solid var(--cream-dim);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-icon {
+      background-color: var(--amber);
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      user-select: none;
+    }
+
+    .header-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--cream-muted);
+      text-transform: uppercase;
+    }
+
+    /* Container wrapper */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 4rem;
+    }
+
+    .hero-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: 300;
+      color: var(--cream-muted);
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      border-top: 1px solid var(--cream-dim);
+      border-bottom: 1px solid var(--cream-dim);
+      padding: 1.5rem 0;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-col: column;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--cream-muted);
+      text-transform: uppercase;
+    }
+
+    .meta-value {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--cream);
+    }
+
+    /* Index Card */
+    .index-card {
+      background-color: var(--ink-light);
+      border: 1px solid var(--cream-dim);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .index-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: block;
+      border-bottom: 1px solid var(--cream-dim);
+      padding-bottom: 0.5rem;
+    }
+
+    .index-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 2.5rem;
+      list-style: none;
+    }
+
+    .index-link {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      color: var(--cream-muted);
+      font-size: 0.9rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .index-link:hover {
+      color: var(--cream);
+      transform: translateX(3px);
+    }
+
+    .index-number {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--amber);
+      font-weight: 700;
+    }
+
+    /* Seções de Conteúdo */
+    .section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--cream-dim);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .sec-number {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--amber);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .sec-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 900;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 1.75rem;
+    }
+
+    .sec-text {
+      color: var(--cream-muted);
+      max-width: 680px;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sec-text strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    .subsection-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background-color: var(--amber-dim);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      max-width: 680px;
+      font-size: 0.9rem;
+      color: var(--cream);
+    }
+
+    .highlight-box strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* Custom List Items */
+    .item-list {
+      list-style: none;
+      margin: 1.5rem 0;
+      max-width: 680px;
+    }
+
+    .item-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(242, 237, 228, 0.08);
+      color: var(--cream-muted);
+      font-size: 0.92rem;
+    }
+
+    .item-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .item-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-weight: 700;
+    }
+
+    .item-list li strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* Grid de Cards (Seção 08) */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+      max-width: 680px;
+    }
+
+    .right-card {
+      background-color: var(--ink-light);
+      border: 1px solid var(--cream-dim);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .right-card:hover {
+      border-color: var(--amber);
+      transform: translateY(-2px);
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--cream-muted);
+      line-height: 1.5;
+    }
+
+    /* Box de Contato (Seção 10) */
+    .contact-box {
+      background-color: var(--ink-light);
+      border: 1px solid var(--cream-dim);
+      border-radius: 12px;
+      margin: 2rem 0;
+      max-width: 680px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid var(--cream-dim);
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--cream-muted);
+    }
+
+    .contact-val {
+      font-size: 0.9rem;
+      color: var(--cream);
+    }
+
+    .contact-link {
+      color: var(--amber);
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    .contact-link:hover {
+      color: var(--amber-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      border-top: 1px solid var(--cream-dim);
+      margin-top: 2rem;
+    }
+
+    .footer-text {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--cream-muted);
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       📱 RESPONSIVENESS
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 2.5rem 1.25rem;
+      }
+      
+      header {
+        padding: 0 1rem;
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .index-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-icon">💾</div>
+      <span class="logo-text">disqet</span>
+    </div>
+    <span class="header-tag">Termos & Privacidade</span>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="hero-label">Documentos legais</span>
+      <h1 class="hero-title">Termos de Uso & Política de Privacidade</h1>
+      <p class="hero-subtitle">
+        Leia atentamente as regras de funcionamento, coleta de dados e proteção da privacidade na plataforma Disqet.
+      </p>
+      
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Versão</span>
+          <span class="meta-value">2.0</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Vigente desde</span>
+          <span class="meta-value">08 de Junho de 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Última atualização</span>
+          <span class="meta-value">08 de Junho de 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigable Index Card -->
+    <nav class="index-card">
+      <span class="index-title">Índice</span>
+      <ul class="index-grid">
+        <li>
+          <a href="#secao-01" class="index-link">
+            <span class="index-number">01</span> O que é o Disqet
+          </a>
+        </li>
+        <li>
+          <a href="#secao-02" class="index-link">
+            <span class="index-number">02</span> Dados que coletamos
+          </a>
+        </li>
+        <li>
+          <a href="#secao-03" class="index-link">
+            <span class="index-number">03</span> Como usamos seus dados
+          </a>
+        </li>
+        <li>
+          <a href="#secao-04" class="index-link">
+            <span class="index-number">04</span> Mídias enviadas
+          </a>
+        </li>
+        <li>
+          <a href="#secao-05" class="index-link">
+            <span class="index-number">05</span> Uso de mídias para promoção
+          </a>
+        </li>
+        <li>
+          <a href="#secao-06" class="index-link">
+            <span class="index-number">06</span> Compartilhamento de dados
+          </a>
+        </li>
+        <li>
+          <a href="#secao-07" class="index-link">
+            <span class="index-number">07</span> Retenção e exclusão
+          </a>
+        </li>
+        <li>
+          <a href="#secao-08" class="index-link">
+            <span class="index-number">08</span> Seus direitos (LGPD)
+          </a>
+        </li>
+        <li>
+          <a href="#secao-09" class="index-link">
+            <span class="index-number">09</span> Cookies e rastreamento
+          </a>
+        </li>
+        <li>
+          <a href="#secao-10" class="index-link">
+            <span class="index-number">10</span> Contato e DPO
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Content Sections -->
+    <main>
+      
+      <!-- Section 01 -->
+      <section class="section">
+        <span class="sec-number">01</span>
+        <h2 class="sec-title" id="secao-01">O que é o Disqet</h2>
+        <p class="sec-text">
+          O <strong>Disqet</strong> é uma plataforma de álbuns colaborativos para eventos. Criadores geram um álbum acessível por QR Code; convidados enviam fotos e vídeos sem criar conta. Ao usar a plataforma, o usuário concorda com estes termos em conformidade com a <strong>LGPD (Lei nº 13.709/2018)</strong>.
+        </p>
+      </section>
+
+      <!-- Section 02 -->
+      <section class="section">
+        <span class="sec-number">02</span>
+        <h2 class="sec-title" id="secao-02">Dados que coletamos</h2>
+        
+        <span class="subsection-title">De criadores de eventos:</span>
+        <ul class="item-list">
+          <li><strong>E-mail</strong>: coletado para fins de autenticação via código de uso único (OTP).</li>
+          <li><strong>Dados do evento</strong>: informações inseridas pelo criador, incluindo nome do evento, data, local e mensagem de boas-vindas.</li>
+          <li><strong>Dados de pagamento</strong>: processados por plataformas parceiras integradas. <strong>Não armazenamos informações de cartão de crédito</strong> em nossos servidores.</li>
+        </ul>
+
+        <span class="subsection-title">De convidados:</span>
+        <ul class="item-list">
+          <li><strong>Nome ou apelido</strong>: informado voluntariamente pelo convidado ao ingressar na galeria do evento.</li>
+          <li><strong>Identificador de dispositivo (fingerprint)</strong>: coletado para controle de acesso do convidado, limite de uploads e segurança de rede. <strong>Nenhuma informação pessoal identificável é extraída</strong> a partir desse identificador.</li>
+          <li><strong>Fotos e vídeos</strong>: mídias enviadas ativamente pelo participante para compor o álbum do evento.</li>
+          <li><strong>Endereço IP e logs de acesso</strong>: dados técnicos coletados pelo servidor para auditoria, diagnóstico de rede e prevenção de fraudes.</li>
+        </ul>
+      </section>
+
+      <!-- Section 03 -->
+      <section class="section">
+        <span class="sec-number">03</span>
+        <h2 class="sec-title" id="secao-03">Como usamos seus dados</h2>
+        <p class="sec-text">
+          O tratamento de dados pessoais é realizado com finalidades específicas, explícitas e legítimas:
+        </p>
+        <ul class="item-list">
+          <li><strong>Autenticação</strong>: validar o acesso do criador do evento ao seu painel administrativo.</li>
+          <li><strong>Identificação na galeria</strong>: exibir a autoria de cada foto ou vídeo enviado ao painel do evento.</li>
+          <li><strong>Disponibilização de mídias</strong>: hospedar e exibir as mídias coletadas nas galerias públicas ou privadas do Disqet.</li>
+          <li><strong>Segurança e moderação</strong>: cruzar logs e identificadores de dispositivo para coibir fraudes, spams e invasões de sistema.</li>
+          <li><strong>Comunicações necessárias</strong>: envio de faturas, e-mails operacionais e alertas transacionais.</li>
+          <li><strong>Melhoria de produto</strong>: análise agregada de estatísticas de performance da plataforma em formato anonimizado.</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>Bases Legais aplicadas:</strong> O processamento é baseado no <strong>consentimento</strong> fornecido pelos usuários (Art. 7º, I da LGPD) e no <strong>legítimo interesse</strong> do Disqet (Art. 7º, IX da LGPD) para propósitos de segurança da informação e prevenção a fraudes de acesso.
+        </div>
+      </section>
+
+      <!-- Section 04 -->
+      <section class="section">
+        <span class="sec-number">04</span>
+        <h2 class="sec-title" id="secao-04">Mídias enviadas</h2>
+        <p class="sec-text">
+          As fotos e vídeos compartilhados na plataforma são armazenados de forma otimizada nos buckets seguros da <strong>Cloudflare R2</strong> e permanecem ativos para visualização durante o período estipulado no plano contratado.
+        </p>
+        <p class="sec-text">
+          O criador do evento possui autoridade administrativa exclusiva de moderação, podendo <strong>excluir fotos e mídias</strong> a qualquer momento de forma imediata. Ao expirar o álbum do evento, todas as imagens anexas são <strong>excluídas permanentemente</strong> de nossos bancos de armazenamento.
+        </p>
+        <div class="highlight-box">
+          <strong>Garantia de Direitos:</strong> Ao efetuar o upload de qualquer arquivo de imagem ou vídeo no Disqet, o convidado declara possuir todos os <strong>direitos autorais</strong> sobre a obra, ou <strong>autorização prévia</strong> de todas as pessoas presentes na cena, assumindo integral responsabilidade pelos registros.
+        </div>
+      </section>
+
+      <!-- Section 05 -->
+      <section class="section">
+        <span class="sec-number">05</span>
+        <h2 class="sec-title" id="secao-05">Uso de mídias para promoção</h2>
+        <p class="sec-text">
+          Como plataforma social, nos orgulhamos dos registros incríveis capturados através do Disqet. O uso institucional do material capturado segue diretrizes estritas:
+        </p>
+        <div class="highlight-box">
+          <strong>Regra de Promoção Comercial:</strong> O Disqet poderá utilizar mídias coletadas para fins de <strong>divulgação institucional e publicidade</strong> (redes sociais, materiais de marketing, campanhas e portfólio digital) <strong>somente sob consentimento explícito e direto</strong> fornecido voluntariamente pelo usuário no ato de envio. Nenhuma mídia será empregada promocionalmente sem essa aprovação prévia.
+        </div>
+        <p class="sec-text">
+          O material concedido para campanhas promocionais poderá ter <strong>rostos desfocados</strong> ou ser <strong>anonimizado</strong> pelo Disqet. A outorga desse uso de imagem é <strong>opcional e revogável</strong> a qualquer momento sob requisição formal do proprietário, sem qualquer perda de funcionalidade.
+        </p>
+        <p class="sec-text">
+          <strong>Base legal para tratamento:</strong> Consentimento livre do titular (Art. 7º, I da LGPD).
+        </p>
+      </section>
+
+      <!-- Section 06 -->
+      <section class="section">
+        <span class="sec-number">06</span>
+        <h2 class="sec-title" id="secao-06">Compartilhamento de dados</h2>
+        <p class="sec-text">
+          Adotamos uma política rígida de sigilo: <strong>não comercializamos, vendemos ou alugamos</strong> quaisquer dados cadastrais de nossos usuários.
+        </p>
+        <p class="sec-text">
+          Os dados armazenados são compartilhados somente com fornecedores estritamente essenciais para a operação da plataforma, como:
+        </p>
+        <ul class="item-list">
+          <li><strong>Parceiros de infraestrutura</strong>: serviços de computação em nuvem, armazenamento de dados e envio automático de e-mails transacionais.</li>
+          <li><strong>Processadoras de pagamento</strong>: instituições responsáveis pela liquidação financeira segura de faturas e planos de álbuns.</li>
+          <li><strong>Entidades judiciais</strong>: quando formos obrigados por lei a cumprir mandados, termos de cooperação de investigação ou ordens judiciais específicas.</li>
+        </ul>
+        <p class="sec-text">
+          Todos os nossos operadores e parceiros terceirizados de infraestrutura são regulados contratualmente e estão legalmente sujeitos a obrigações estritas de <strong>confidencialidade</strong>, respeitando as conformidades da LGPD.
+        </p>
+      </section>
+
+      <!-- Section 07 -->
+      <section class="section">
+        <span class="sec-number">07</span>
+        <h2 class="sec-title" id="secao-07">Retenção e exclusão</h2>
+        <p class="sec-text">
+          Os dados coletados são mantidos apenas pelo período necessário para cumprir com as suas finalidades:
+        </p>
+        <ul class="item-list">
+          <li><strong>Arquivos de Mídia</strong>: retidos na Cloudflare R2 pela duração do álbum contratado pelo organizador e <strong>excluídos permanentemente</strong> após a expiração.</li>
+          <li><strong>Contas de Criadores</strong>: dados de cadastro do organizador são retidos durante o tempo de atividade da conta e <strong>deletados sob requisição formal</strong> de exclusão de conta.</li>
+          <li><strong>Registros de Convidados</strong>: o identificador de dispositivo (fingerprint) é <strong>descartado imediatamente</strong> com o encerramento das sessões vinculadas ao evento. Logs técnicos de infraestrutura são armazenados por até <strong>90 dias</strong> para fins de conformidade e segurança cibernética.</li>
+          <li><strong>Registros Financeiros</strong>: notas fiscais e comprovantes fiscais de compras são mantidos em banco de dados seguro pelos <strong>prazos mínimos exigidos pela legislação fiscal</strong> brasileira.</li>
+        </ul>
+      </section>
+
+      <!-- Section 08 -->
+      <section class="section">
+        <span class="sec-number">08</span>
+        <h2 class="sec-title" id="secao-08">Seus direitos (LGPD)</h2>
+        <p class="sec-text">
+          Você tem total autonomia e controle sobre seus dados pessoais de acordo com os termos do Artigo 18 da LGPD. Abaixo estão listados os direitos assegurados que podem ser exercidos diretamente perante a nossa equipe:
+        </p>
+
+        <div class="cards-grid">
+          <div class="right-card">
+            <div class="card-icon">👁</div>
+            <h4 class="card-title">Acesso</h4>
+            <p class="card-desc">Saber quais dados pessoais estão sendo tratados e obter uma cópia de seu histórico de cadastro.</p>
+          </div>
+          <div class="right-card">
+            <div class="card-icon">✏️</div>
+            <h4 class="card-title">Correção</h4>
+            <p class="card-desc">Solicitar a retificação e correção de seus dados pessoais incompletos, inexatos ou desatualizados.</p>
+          </div>
+          <div class="right-card">
+            <div class="card-icon">🗑</div>
+            <h4 class="card-title">Exclusão</h4>
+            <p class="card-desc">Pedir a eliminação permanente de dados pessoais processados com base em seu consentimento anterior.</p>
+          </div>
+          <div class="right-card">
+            <div class="card-icon">🔄</div>
+            <h4 class="card-title">Portabilidade</h4>
+            <p class="card-desc">Requerer a transferência estruturada de seus dados a outro prestador de serviços ou concorrente.</p>
+          </div>
+          <div class="right-card">
+            <div class="card-icon">🚫</div>
+            <h4 class="card-title">Revogação</h4>
+            <p class="card-desc">Retirar seu consentimento para qualquer tratamento futuro de forma simplificada e imediata.</p>
+          </div>
+          <div class="right-card">
+            <div class="card-icon">ℹ️</div>
+            <h4 class="card-title">Informação</h4>
+            <p class="card-desc">Saber quais órgãos públicos ou corporações privadas receberam dados por meio de compartilhamento.</p>
+          </div>
+        </div>
+
+        <p class="sec-text">
+          <strong>Tempo de Atendimento:</strong> Todas as requisições referentes a direitos de titulares de dados pessoais são analisadas e atendidas em até <strong>15 dias úteis</strong> a partir do envio.
+        </p>
+      </section>
+
+      <!-- Section 09 -->
+      <section class="section">
+        <span class="sec-number">09</span>
+        <h2 class="sec-title" id="secao-09">Cookies e rastreamento</h2>
+        <p class="sec-text">
+          Utilizamos cookies em seu navegador de maneira restrita, apenas para viabilizar e proteger as sessões essenciais da plataforma:
+        </p>
+        <ul class="item-list">
+          <li><strong>Autenticação de Hosts</strong>: cookie <code>httpOnly</code> exclusivo e criptografado para preservar as sessões administrativas logadas de forma segura.</li>
+          <li><strong>Sessões de Visitantes</strong>: cookie técnico temporário atrelado ao fingerprint para controlar os limites e quantidades de uploads por usuário no evento.</li>
+          <li><strong>Segurança contra Ataques</strong>: cookies utilitários anti-falsificação (CSRF) e controle de tráfego contra acessos repetitivos (rate limiting).</li>
+        </ul>
+        <p class="sec-text">
+          <strong>Aviso de Monitoramento:</strong> O Disqet <strong>não faz uso de cookies de publicidade direcionada</strong>, perfilamento de interesses comerciais ou ferramentas comportamentais invasivas de terceiros.
+        </p>
+      </section>
+
+      <!-- Section 10 -->
+      <section class="section">
+        <span class="sec-number">10</span>
+        <h2 class="sec-title" id="secao-10">Contato e DPO</h2>
+        <p class="sec-text">
+          Se você possuir solicitações de direitos, dúvidas gerais sobre nossas práticas de proteção de dados ou requisições de privacidade, entre em contato diretamente com o nosso Encarregado de Proteção de Dados (DPO):
+        </p>
+
+        <div class="contact-box">
+          <div class="contact-row">
+            <span class="contact-label">E-MAIL</span>
+            <span class="contact-val">
+              <a href="mailto:privacidade@disqet.com" class="contact-link">privacidade@disqet.com</a>
+            </span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">DPO</span>
+            <span class="contact-val">A definir</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">PRAZO DE RESPOSTA</span>
+            <span class="contact-val">Até 15 dias úteis</span>
+          </div>
+        </div>
+
+        <p class="sec-text" style="font-size: 0.85rem;">
+          Você também tem total direito legal de registrar representações, denúncias ou petições sobre infração de dados diretamente junto à <strong>ANPD (Autoridade Nacional de Proteção de Dados)</strong> por meio de seus portais oficiais em <a href="https://www.gov.br/anpd" target="_blank" style="color: var(--amber); text-decoration: underline; font-weight: 500;">gov.br/anpd</a>.
+        </p>
+      </section>
+      
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p class="footer-text">© 2026 Disqet · Todos os direitos reservados</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
